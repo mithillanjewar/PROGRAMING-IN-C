@@ -1,0 +1,70 @@
+#include <stdio.h>
+
+struct Distance {
+    int feet;
+    float inches;
+};
+
+struct Distance addDistance(struct Distance d1, struct Distance d2) {
+    struct Distance result;
+    result.feet = d1.feet + d2.feet;
+    result.inches = d1.inches + d2.inches;
+
+    if (result.inches >= 12.0) {
+        result.inches -= 12.0;
+        result.feet += 1;
+    }
+
+    return result;
+}
+
+int main() {
+    struct Distance d1, d2, sum;
+
+    printf("Enter first distance (feet inches): ");
+    scanf("%d %f", &d1.feet, &d1.inches);
+
+    printf("Enter second distance (feet inches): ");
+    scanf("%d %f", &d2.feet, &d2.inches);
+
+    sum = addDistance(d1, d2);
+
+    printf("Sum of distances = %d feet %.2f inches\n", sum.feet, sum.inches);
+    return 0;
+}
+
+
+#include <stdio.h>
+
+struct Subject {
+    char name[30];
+    int credits;
+    float gradePoint;  // e.g., A = 10, B = 8, etc.
+};
+
+int main() {
+    int n, i;
+    struct Subject subjects[10];
+    float totalPoints = 0, totalCredits = 0, cgpa;
+
+    printf("Enter number of subjects: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++) {
+        printf("\nEnter details for subject %d:\n", i + 1);
+        printf("Name: ");
+        scanf("%s", subjects[i].name);
+        printf("Credits: ");
+        scanf("%d", &subjects[i].credits);
+        printf("Grade Point (e.g., 10 for A+): ");
+        scanf("%f", &subjects[i].gradePoint);
+
+        totalPoints += subjects[i].credits * subjects[i].gradePoint;
+        totalCredits += subjects[i].credits;
+    }
+
+    cgpa = totalPoints / totalCredits;
+    printf("\nCGPA = %.2f\n", cgpa);
+
+    return 0;
+}
