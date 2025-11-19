@@ -1,0 +1,80 @@
+#include <stdio.h>
+
+int main() {
+    float principal, rate, time, interest;
+
+    printf("Enter Principal amount: ");
+    scanf("%f", &principal);
+
+    printf("Enter Rate of interest (in %%): ");
+    scanf("%f", &rate);
+
+    printf("Enter Time (in years): ");
+    scanf("%f", &time);
+
+    interest = (principal * rate * time) / 100;
+
+    printf("Simple Interest = %.2f\n", interest);
+    return 0;
+}
+
+
+
+#include <stdio.h>
+#include <stdbool.h>
+
+bool isPrime(int num) {
+    if (num <= 1) return false;
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0)
+            return false;
+    }
+    return true;
+}
+
+int main() {
+    int number;
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    if (isPrime(number))
+        printf("%d is a Prime Number.\n", number);
+    else
+        printf("%d is Not a Prime Number.\n", number);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num, original, remainder, n = 0;
+    float result = 0.0;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    original = num;
+
+    // Count digits
+    for (int temp = num; temp != 0; temp /= 10)
+        n++;
+
+    // Calculate Armstrong sum
+    for (int temp = num; temp != 0; temp /= 10) {
+        remainder = temp % 10;
+        result += pow(remainder, n);
+    }
+
+    if ((int)result == original)
+        printf("%d is an Armstrong Number.\n", original);
+    else
+        printf("%d is Not an Armstrong Number.\n", original);
+
+    return 0;
+}
+
+
+
+
