@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str1[100], str2[100], result[200];
+
+    // Input strings
+    printf("Enter first string: ");
+    gets(str1);  // Note: gets is unsafe, consider using fgets in real applications
+
+    printf("Enter second string: ");
+    gets(str2);
+
+    // strcpy: Copy str1 into result
+    strcpy(result, str1);
+    printf("\nAfter strcpy, result = %s\n", result);
+
+    // strcat: Concatenate str2 to result
+    strcat(result, str2);
+    printf("After strcat, result = %s\n", result);
+
+    // strcmp: Compare str1 and str2
+    int cmp = strcmp(str1, str2);
+    if (cmp == 0)
+        printf("strcmp: Strings are equal.\n");
+    else if (cmp < 0)
+        printf("strcmp: str1 is less than str2.\n");
+    else
+        printf("strcmp: str1 is greater than str2.\n");
+
+    return 0;
+}
