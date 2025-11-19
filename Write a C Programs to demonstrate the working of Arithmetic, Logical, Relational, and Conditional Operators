@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int a = 10, b = 5;
+    int result;
+
+    // Arithmetic Operators
+    printf("Arithmetic Operators:\n");
+    printf("Addition: %d + %d = %d\n", a, b, a + b);
+    printf("Subtraction: %d - %d = %d\n", a, b, a - b);
+    printf("Multiplication: %d * %d = %d\n", a, b, a * b);
+    printf("Division: %d / %d = %d\n", a, b, a / b);
+    printf("Modulus: %d %% %d = %d\n\n", a, b, a % b);
+
+    // Relational Operators
+    printf("Relational Operators:\n");
+    printf("%d == %d: %d\n", a, b, a == b);
+    printf("%d != %d: %d\n", a, b, a != b);
+    printf("%d > %d: %d\n", a, b, a > b);
+    printf("%d < %d: %d\n", a, b, a < b);
+    printf("%d >= %d: %d\n", a, b, a >= b);
+    printf("%d <= %d: %d\n\n", a, b, a <= b);
+
+    // Logical Operators
+    int x = 1, y = 0;
+    printf("Logical Operators:\n");
+    printf("x && y: %d\n", x && y);
+    printf("x || y: %d\n", x || y);
+    printf("!x: %d\n\n", !x);
+
+    // Conditional (Ternary) Operator
+    printf("Conditional Operator:\n");
+    result = (a > b) ? a : b;
+    printf("Greater of %d and %d is: %d\n", a, b, result);
+
+    return 0;
+}
